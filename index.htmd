@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: cyan;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 10%;
+            text-shadow: 0 0 10px cyan;
+        }
+        .login-container {
+            margin-top: 2rem;
+        }
+        input {
+            padding: 10px;
+            font-size: 1rem;
+            margin: 5px;
+            border: 1px solid cyan;
+            border-radius: 5px;
+            background: black;
+            color: cyan;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: cyan;
+            color: black;
+            cursor: pointer;
+        }
+        button:hover {
+            background: lightblue;
+        }
+        .welcome-message {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: lime;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Iron Man Dashboard</h1>
+    <div class="login-container">
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="welcome-message" class="welcome-message"></div>
+
+    <script>
+        // Funkcia na spracovanie prihlásenia
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "waltxko" && password === "walterinko908") {
+                document.getElementById('welcome-message').innerText = "Welcome, waltxko, in your database!";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+
+        // Pridáme možnosť stlačiť Enter
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                login();
+            }
+        });
+    </script>
+</body>
+</html>
