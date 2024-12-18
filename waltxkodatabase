@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man Style Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #0f0f0f, #010101);
+            color: #00ffe7;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 231, 0.8);
+        }
+        .login-box h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00ffe7;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #00ffe7;
+            color: #010101;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-box button:hover {
+            background: #00d1b8;
+        }
+        .dashboard {
+            padding: 20px;
+        }
+        .item {
+            background: rgba(20, 20, 20, 0.85);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+        }
+        .neon-text {
+            color: #00ffe7;
+            text-shadow: 0 0 10px #00ffe7, 0 0 20px #00d1b8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="neon-text">Login</h1>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Sign In</button>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" style="display:none;">
+        <h1 class="neon-text">Dashboard</h1>
+        <div class="item">
+            <h3>Item 1</h3>
+            <p>Description for item 1...</p>
+        </div>
+        <div class="item">
+            <h3>Item 2</h3>
+            <p>Description for item 2...</p>
+        </div>
+    </div>
+
+    <script>
+        // Example logic to switch from login to dashboard
+        document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('.login-container').style.display = 'none';
+            document.querySelector('.dashboard').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
